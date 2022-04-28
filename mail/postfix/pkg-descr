@@ -6,6 +6,10 @@ is completely different.
 Plugin Changelog
 ================
 
+1.22
+
+* Add support for configuring recipient_canonical_maps
+
 1.21
 
 * Add static link to root certficiates

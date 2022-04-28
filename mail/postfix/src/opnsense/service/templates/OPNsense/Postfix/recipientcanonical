@@ -1,0 +1,9 @@
+{% if helpers.exists('OPNsense.postfix.general.enabled') and OPNsense.postfix.general.enabled == '1' %}
+{%   if helpers.exists('OPNsense.postfix.recipientcanonical.recipientcanonicals.recipientcanonical') %}
+{%     for recipientcanonical in helpers.toList('OPNsense.postfix.recipientcanonical.recipientcanonicals.recipientcanonical') %}
+{%       if recipientcanonical.enabled == '1' %}
+{{ recipientcanonical.from }} {{ recipientcanonical.to }}
+{%       endif %}
+{%     endfor %}
+{%   endif %}
+{% endif %}
